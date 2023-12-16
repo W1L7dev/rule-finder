@@ -1,52 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculateur de Fonction Linéaire et Affine</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 50px;
-        }
-
-        #result {
-            font-weight: bold;
-            color: green;
-        }
-    </style>
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://www.desmos.com/api/v1.8/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+    <script src="script.js"></script>
+  </head>
+  <body>
     <h1>Trouver la règle d'une fonction linéaire et affine</h1>
     <label for="inputY2">Entrez la valeur y<sub>2</sub>: </label>
-    <input type="number" id="inputY2" placeholder="Valeur de y2"><br />
+    <input type="number" id="inputY2" placeholder="Valeur de y2" /><br />
     <label for="inputY1">Entrez la valeur y<sub>1</sub>: </label>
-    <input type="number" id="inputY1" placeholder="Valeur de y1"><br />
+    <input type="number" id="inputY1" placeholder="Valeur de y1" /><br />
     <label for="inputX2">Entrez la valeur x<sub>2</sub>: </label>
-    <input type="number" id="inputX2" placeholder="Valeur de x2"><br />
+    <input type="number" id="inputX2" placeholder="Valeur de x2" /><br />
     <label for="inputX1">Entrez la valeur x<sub>1</sub>: </label>
-    <input type="number" id="inputX1" placeholder="Valeur de x1"><br />
+    <input type="number" id="inputX1" placeholder="Valeur de x1" /><br />
     <button onclick="calculate()">Calculer</button>
     <p id="result"></p>
-
-    <script>
-        function calculate() {
-            var y2 = parseFloat(document.getElementById("inputY2").value);
-            var y1 = parseFloat(document.getElementById("inputY1").value);
-            var x2 = parseFloat(document.getElementById("inputX2").value);
-            var x1 = parseFloat(document.getElementById("inputX1").value);
-
-            var y = y2 - y1
-            var x = x2 - x1
-
-            var slope = y / x
-            var origin = y1 - slope * x1
-
-            var result = document.getElementById("result")
-            var rule = `y = ${slope === 1 ? "" : slope}x + ${origin === 0 ? "" : origin}`
-            result.innerHTML = `La fonction est : ${rule}`
-        }
-    </script>
-</body>
+    <div id="calculator"></div>
+  </body>
 </html>
