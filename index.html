@@ -6,7 +6,6 @@
     <title>Calculateur de Fonction Linéaire et Affine</title>
     <link rel="stylesheet" href="style.css" />
     <script src="https://www.desmos.com/api/v1.8/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
-    <script src="script.js"></script>
   </head>
   <body>
     <h1>Trouver la règle d'une fonction linéaire et affine</h1>
@@ -42,7 +41,7 @@
         var origin = y1 - slope * x1;
 
         var result = document.getElementById("result");
-        var calulation = document.getElementById("calculation");
+        var calculation = document.getElementById("calculation");
         var rule = `y = ${slope === 1 ? "" : slope}x + ${
           origin === 0 ? "" : origin
         }`;
