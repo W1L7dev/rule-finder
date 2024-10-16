@@ -38,7 +38,12 @@
         var y = y2 - y1;
         var x = x2 - x1;
         var slope = y / x;
-        var origin = slope * x1 < 0 ? y1 + slope * x1 : y1 - slope * x1;
+        var origin;
+        if slope * x2 < 0 {
+          origin = slope * x2 + y2;
+        } else {
+          origin = slopw * x2 - y2;
+        }
 
         var result = document.getElementById("result");
         var calculation = document.getElementById("calculation");
