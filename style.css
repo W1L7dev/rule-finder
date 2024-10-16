@@ -40,6 +40,10 @@ button:hover {
   color: green;
 }
 
+#calculation {
+  text-align: left;
+}
+
 /* Media Query for smaller screens */
 @media only screen and (max-width: 600px) {
   input,
