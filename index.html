@@ -20,6 +20,7 @@
     <input type="number" id="inputX1" placeholder="Valeur de x1" /><br />
     <button onclick="calculate()">Calculer</button>
     <p id="result"></p>
+    <p id="calculation"></p>
     <div id="calculator"></div>
     <script>
       var elt = document.getElementById("calculator");
@@ -41,10 +42,20 @@
         var origin = y1 - slope * x1;
 
         var result = document.getElementById("result");
+        var calulation = document.getElementById("calculation");
         var rule = `y = ${slope === 1 ? "" : slope}x + ${
           origin === 0 ? "" : origin
         }`;
         result.innerHTML = `La fonction est : ${rule}`;
+        calculation.innerHTML = `a = (y<sub>2</sub>-y<sub>1</sub>)÷(x<sub>2</sub>-x<sub>1</sub><br>
+                                 a = (${y2}-${y1})÷(${x2}-${x1}<br>
+                                 a = ${x}÷${y}<br>
+                                 a = ${slope}<br><br>
+                                 y = ax + b<br>
+                                 ${y2} = ${slope}(${x2}) + b<br>
+                                 ${y2} = ${slope*x2} + b<br>
+                                 ${origin} = b`
+                                 
         calculator.setExpression({ id: "graph1", latex: rule });
       }
     </script>
